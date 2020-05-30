@@ -58,6 +58,9 @@ def generic_bfs_edges(G, source, neighbors=None, depth_limit=None):
     .. _PADS: http://www.ics.uci.edu/~eppstein/PADS/BFS.py
     .. _Depth-limited-search: https://en.wikipedia.org/wiki/Depth-limited_search
     """
+
+    print("hello")
+
     visited = {source}
     if depth_limit is None:
         depth_limit = len(G)
@@ -142,6 +145,7 @@ def bfs_edges(G, source, reverse=False, depth_limit=None):
     edge_bfs
 
     """
+    
     if reverse and G.is_directed():
         successors = G.predecessors
     else:
