@@ -59,7 +59,7 @@ def generic_bfs_edges(G, source, neighbors=None, depth_limit=None):
     .. _Depth-limited-search: https://en.wikipedia.org/wiki/Depth-limited_search
     """
 
-    print("hello")
+    yield "hello"
 
     visited = {source}
     if depth_limit is None:
