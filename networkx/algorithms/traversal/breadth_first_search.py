@@ -59,17 +59,27 @@ def generic_bfs_edges(G, source, neighbors=None, depth_limit=None):
     .. _Depth-limited-search: https://en.wikipedia.org/wiki/Depth-limited_search
     """
 
-    print("hello")
-
     visited = {source}
     if depth_limit is None:
         depth_limit = len(G)
     queue = deque([(source, depth_limit, neighbors(source))])
+    
+    """
+    Print the root node of the graph
+    """
+    print("Sto analizzando il nodo radice "+ source)
+    
     while queue:
         parent, depth_now, children = queue[0]
         try:
             child = next(children)
             if child not in visited:
+                
+                """
+                Print the current visited node
+                """
+                print("Sto analizzando il nodo "+ child)
+                
                 yield parent, child
                 visited.add(child)
                 if depth_now > 1:
